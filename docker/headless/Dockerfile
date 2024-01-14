@@ -30,7 +30,10 @@ WORKDIR /code
 
 EXPOSE 3000
 
+RUN npm install -g express-generator@4
+
 USER node
+
 
 ENTRYPOINT ["/app/loop.sh"]
 

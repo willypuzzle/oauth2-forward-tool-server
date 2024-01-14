@@ -4,8 +4,9 @@
   "description": "OAuth2 Server Implementation with Roles and Permissions Management",
   "main": "build/app.js",
   "scripts": {
-    "tsc": "tsc",
-    "start:prod": "node build/app.js",
+    "build": "tsc",
+    "start:prod": "node ./bin/www",
+    "start:debug": "DEBUG=oauth2-server:* node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,9 +27,16 @@
   "homepage": "https://github.com/willypuzzle/oauth2-server#readme",
   "dependencies": {
     "@types/express": "^4.17.21",
-    "express": "^4.18.2"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "^4.18.2",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "pug": "2.0.0-beta11"
   },
   "devDependencies": {
+    "@types/cookie-parser": "^1.4.6",
+    "@types/morgan": "^1.9.9",
     "typescript": "^5.2.2"
   }
 }
