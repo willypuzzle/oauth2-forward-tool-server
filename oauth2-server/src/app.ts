@@ -3,19 +3,30 @@ import express from 'express';
 import * as path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
+import bodyParser from 'body-parser';
+import OAuthServer from 'express-oauth-server';
 
 import indexRouter from './routes/index';
 import usersRouter from './routes/users';
 
-let app = express();
+const app = express();
 
-// view engine setup
+import model from './model';
+
+const oauth = new OAuthServer({
+	model,
+    useErrorHandler: false,
+	continueMiddleware: false,
+});
+
+
 app.set('views', path.join(__dirname, '..','views'));
 app.set('view engine', 'pug');
 
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(oauth.authorize());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
