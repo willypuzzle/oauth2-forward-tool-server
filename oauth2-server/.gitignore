@@ -1,6 +1,7 @@
-*.js
 *.map
 build
+
+.env.local
 
 # Logs
 logs

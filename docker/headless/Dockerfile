@@ -5,7 +5,8 @@ FROM node:${NODE_VERSION}-alpine${ALPINE_VERSION} AS runner
 
 RUN apk update && apk upgrade
 RUN apk add vim
-#RUN apk add shadow bash
+RUN apk add bash
+#RUN apk add shadow
 
 #ARG APP_GROUP=executer
 #ARG APP_GROUP_ID=1000

@@ -1,0 +1,5 @@
+{
+  "watch": ["bin", "src", "test"],
+  "ignore": ["build", "node_modules"],
+  "ext": "js,json,ts"
+}

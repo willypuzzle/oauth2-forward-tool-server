@@ -1,12 +1,13 @@
 {
   "name": "oauth2-server",
   "version": "1.0.0",
-  "description": "OAuth2 Server Implementation with Roles and Permissions Management",
+  "description": "OAuth2 Forwarding Server with scope management",
   "main": "build/app.js",
   "scripts": {
     "build": "tsc",
-    "start:prod": "node ./bin/www",
-    "start:debug": "DEBUG=oauth2-server:* node ./bin/www",
+    "start:dev": "DEBUG=oauth2-server:* NODEMON=1 nodemon --exec ts-node bin/www.js",
+    "start:prod": "node ./bin/www.js",
+    "start:debug": "DEBUG=oauth2-server:* node ./bin/www.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -39,6 +40,8 @@
   "devDependencies": {
     "@types/cookie-parser": "^1.4.6",
     "@types/morgan": "^1.9.9",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5.2.2"
   }
 }
