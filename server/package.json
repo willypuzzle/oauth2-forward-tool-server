@@ -1,7 +1,7 @@
 {
-  "name": "oauth2-server",
-  "version": "1.0.0",
-  "description": "OAuth2 Forwarding Server with scope management",
+  "name": "oauth2-foward-tool-server",
+  "version": "0.1.0-alpha.1",
+  "description": "OAuth2 Forwarding Tool with scope management - Server Side",
   "main": "build/app.js",
   "scripts": {
     "build": "tsc",
