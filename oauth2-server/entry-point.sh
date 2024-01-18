@@ -19,12 +19,6 @@ function parse_variable {
   fi
 }
 
-function test_app {
-    npm run build && \
-    npm run start && \
-    npm run test
-}
-
 SCRIPT_DIR=$(dirname "$0")
 
 ENV_LOCAL_FILE="$SCRIPT_DIR/.env.local"
@@ -77,7 +71,7 @@ if [ -n "$1" ]; then
             npm run start:prod
             ;;
         -t|--test)
-            test_app
+            npm run test
             ;;
         -d|--develop)
             npm run start:dev
