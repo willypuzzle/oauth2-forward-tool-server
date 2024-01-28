@@ -1,4 +1,4 @@
-import createError from 'http-errors';
+import {NotFound} from 'http-errors';
 import express from 'express';
 import * as path from 'path';
 import cookieParser from 'cookie-parser';
@@ -26,7 +26,7 @@ app.use('/main', mainRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-	next(createError(404));
+	next(new NotFound('Not Found'));
 });
 
 // error handler

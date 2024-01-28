@@ -74,7 +74,7 @@ if [ -n "$1" ]; then
             npm run test
             ;;
         -d|--develop)
-            npm run start:dev
+            npm install && npm run start:dev
             ;;
     esac
 fi
